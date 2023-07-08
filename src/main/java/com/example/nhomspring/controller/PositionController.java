@@ -1,2 +1,4 @@
-package com.example.nhomspring.controller;public class PositionController {
+package com.example.nhomspring.controller;
+
+public class PositionController {
 }

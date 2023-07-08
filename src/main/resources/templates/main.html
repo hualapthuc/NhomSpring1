@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>User Application</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+<!--    <script type="text/javascript" th:src="@{/js/jquery-3.1.1.min.js}"></script>-->
 </head>
-<body>
-$END$
+<body class="container">
+<header>
+    <div class="page-header">
+        <h2 style="text-align: center">Chương trình quản lý User</h2>
+    </div>
+</header>
+
+<main id="content" layout:fragment="content">
+    MAIN
+</main>
+
 </body>
 </html>
