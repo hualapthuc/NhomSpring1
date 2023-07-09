@@ -18,8 +18,6 @@ public class Company {
 
     @Column(name = "company_name", nullable = false, length = 200)
     private String company_name;
-    @Column(name = "company_name_kana", nullable = false, length = 200)
-    private String nameKana;
 
     @Column(name = "zipcode", nullable = false, length = 200)
     private String zipCode;
