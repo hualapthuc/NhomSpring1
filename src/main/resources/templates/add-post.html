@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"  layout:decorate="~{main}">
+<body>
+<div layout:fragment="content">
+  <div class="container">
+    <form th:action="@{/post/save-post}" method="post" th:object="${post}" class="form">
+      <div class="form-group">
+        <label>Post Name:</label>
+        <input type="text" th:field="*{post_name}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Zip Code:</label>
+        <input type="text" th:field="*{zipcode}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Address:</label>
+        <input type="text" th:field="*{address}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>In Telephone:</label>
+        <input type="text" th:field="*{in_telephone}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Out Telephone:</label>
+        <input type="text" th:field="*{out_telephone}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Fax Number:</label>
+        <input type="text" th:field="*{fax_number}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Sort:</label>
+        <input type="text" th:field="*{sort}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Create Date:</label>
+        <input type="date" th:field="*{createDate}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Update Date:</label>
+        <input type="date" th:field="*{updateDate}" class="form-control">
+      </div>
+      <div class="form-group mt-3">
+        <label>Company:</label>
+        <select th:field="*{company.id}">
+          <option class="h-75" th:each="company : ${companys}" th:value="${company.id}" th:text="${company.company_name}"></option>
+        </select>
+      </div>
+      <div class="form-group">
+        <a th:href="@{/post}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
+        <button type="submit" value="Save" class="btn btn-light mt-3">Save</button>
+      </div>
+    </form>
+
+  </div>
+</div>
+</body>
+</html>

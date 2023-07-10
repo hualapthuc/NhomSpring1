@@ -5,7 +5,7 @@
 <body>
 <div layout:fragment="content">
   <div class="container">
-    <!--begin form list company-->
+    <!--begin form list post-->
     <div class="row">
       <div class="col-2 border  bg-dark-subtle">
         <div class="pt-3">
@@ -28,36 +28,31 @@
         </div>
       </div>
       <div class="col-9">
-        <h6 class="mb-5">Company Management</h6>
-        <a href="/company/add-company"><button type="button" class="btn btn-light mb-3">Add Company</button></a>
+        <h6 class="mb-5">Post Management</h6>
+        <a href="/post/add-post"><button type="button" class="btn btn-light mb-3">Add Post</button></a>
         <table class="table">
           <thead class="table-dark">
           <tr class="text-center">
             <th>Id</th>
-            <th>Company Name</th>
+            <th>Post Name</th>
             <th>Address</th>
-            <th>Telephone</th>
-            <th>Fax Number</th>
-            <th>Action</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
           </tr>
           </thead>
           <tbody>
-          <tr th:each="company:${listCompany}"class="text-center">
-            <td th:utext="${company.id}"></td>
-            <td th:utext="${company.company_name}"></td>
-            <td th:utext="${company.address}"></td>
-            <td th:utext="${company.telephone}"></td>
-            <td th:utext="${company.faxNumber}"></td>
-            <td>
-              <a th:href="@{/company/{id}(id=${company.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">View</a>
-              <a th:href="@{/company/update/{id}(id=${company.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">Update</a>
-            </td>
+          <tr th:each="post:${listPost}" class="text-center">
+            <td th:utext="${post.post_id}"></td>
+            <td th:utext="${post.post_name}"></td>
+            <td th:utext="${post.address}"></td>
+            <td th:utext="${post.createDate}"></td>
+            <td th:utext="${post.updateDate}"></td>
           </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!--end form list company-->
+    <!--end form list post-->
   </div>
 </div>
 </body>

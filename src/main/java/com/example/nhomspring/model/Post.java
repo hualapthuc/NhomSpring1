@@ -3,7 +3,7 @@ package com.example.nhomspring.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 @Entity
 @Data
 public class Post {
@@ -41,10 +41,10 @@ public class Post {
     private  Group group;
 
     @Column(name = "created_date", nullable = false)
-    private Date createDate;
+    private Date createDate = new Date();
 
     @Column(name = "updated_date", nullable = false)
-    private Date updateDate;
+    private Date updateDate = new Date();
 
 
 }
