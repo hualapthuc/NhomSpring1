@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en" layout:decorate="~{main}">
+<body>
+<div layout:fragment="content">
+  <div class="container">
+    <!--begin form list company-->
+    <div class="row">
+      <div class="col-2 border  bg-dark-subtle">
+        <div class="pt-3">
+          <a th:href="@{/user}"  class="link-secondary" style="text-decoration: none"> User Management</a>
+        </div>
+        <div class="pt-3">
+          <a th:href="@{/position}" class="link-secondary" style="text-decoration: none">
+            Position Management
+          </a>
+        </div>
+        <div class="pt-3">
+          <a th:href="@{/company}" class="link-secondary" style="text-decoration: none">
+            Company Management
+          </a>
+        </div>
+      </div>
+      <div class="col-9">
+        <h6 class="mb-5">Company Management</h6>
+        <a href="/company/add-company"><button type="button" class="btn btn-light mb-3">Add Company</button></a>
+        <table class="table">
+          <thead class="table-dark">
+          <tr class="text-center">
+            <th>Id</th>
+            <th>Company Name</th>
+            <th>Address</th>
+            <th>Telephone</th>
+            <th>Fax Number</th>
+            <th>Action</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="company:${listCompany}"class="text-center">
+            <td th:utext="${company.id}"></td>
+            <td th:utext="${company.company_name}"></td>
+            <td th:utext="${company.address}"></td>
+            <td th:utext="${company.telephone}"></td>
+            <td th:utext="${company.faxNumber}"></td>
+            <td>
+              <a th:href="@{/company/{id}(id=${company.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">View</a>
+              <a th:href="@{/company/update/{id}(id=${company.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">Update</a>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--end form list company-->
+  </div>
+</div>
+</body>
+</html>

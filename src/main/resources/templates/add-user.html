@@ -32,7 +32,13 @@
             </div>
             <div class="form-group">
                 <label>Create Date:</label>
-                <input type="text" th:field="*{createDate}" class="form-control">
+                <input type="date" th:field="*{createDate}" class="form-control">
+            </div>
+            <div class="form-group mt-3">
+                <label>Company:</label>
+                <select th:field="*{company.id}">
+                    <option class="h-75" th:each="company : ${companys}" th:value="${company.id}" th:text="${company.company_name}"></option>
+                </select>
             </div>
             <div class="form-group mt-3">
                 <label>Position:</label>

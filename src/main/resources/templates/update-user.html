@@ -39,11 +39,18 @@
         <input type="text" th:field="*{createDate}" class="form-control">
       </div>
       <div class="form-group mt-3">
-        <label>Position:</label>
-        <input th:field="*{position.id}">
+        <label>Company ID:</label><br>
+        <input th:field="*{company.id}" class="w-100">
+        <!--          <option class="h-75" th:each="position : ${positions}" th:value="${position.id}" th:text="${position.name}"></option>-->
+        <!--        </select>-->
+      </div>
+      <div class="form-group mt-3">
+        <label>Position ID:</label><br>
+        <input th:field="*{position.id}" class="w-100">
 <!--          <option class="h-75" th:each="position : ${positions}" th:value="${position.id}" th:text="${position.name}"></option>-->
 <!--        </select>-->
       </div>
+
       <div class="form-group">
         <a th:href="@{/user}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
         <button type="submit" value="Save" class="btn btn-light mt-3">Update</button>

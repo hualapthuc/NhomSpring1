@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en"  layout:decorate="~{main}">
+<body>
+<div layout:fragment="content">
+  <div class="container">
+    <form th:action="@{/company/update-company}" method="post" th:object="${company}" class="form">
+      <div class="form-group">
+        <label>Company ID:</label>
+        <input type="text" th:field="*{id}" class="form-control" th:value="${company.id}" readonly>
+      </div>
+      <div class="form-group">
+        <label>Company Name:</label>
+        <input type="text" th:field="*{company_name}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Zip Code:</label>
+        <input type="text" th:field="*{zipCode}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Address:</label>
+        <input type="text" th:field="*{address}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Telephone:</label>
+        <input type="text" th:field="*{telephone}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Fax Number:</label>
+        <input type="text" th:field="*{faxNumber}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Url:</label>
+        <input type="text" th:field="*{url}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>IpAddress:</label>
+        <input type="text" th:field="*{ipAddress}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Port:</label>
+        <input type="text" th:field="*{port}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>IpAddress Internal:</label>
+        <input type="text" th:field="*{ipAddressInternal}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>IpPort Internal:</label>
+        <input type="text" th:field="*{portInternal}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Create Date:</label>
+        <input type="text" th:field="*{createDate}" class="form-control">
+      </div>
+      <div class="form-group">
+        <label>Update Date:</label>
+        <input type="text" th:field="*{updateDate}" class="form-control">
+      </div>
+      <div class="form-group">
+        <a th:href="@{/company}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
+        <button type="submit" value="Save" class="btn btn-light mt-3">Update</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>

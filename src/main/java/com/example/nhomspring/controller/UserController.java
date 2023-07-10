@@ -1,6 +1,7 @@
 package com.example.nhomspring.controller;
 
 import com.example.nhomspring.model.User;
+import com.example.nhomspring.service.CompanyService;
 import com.example.nhomspring.service.PositionService;
 import com.example.nhomspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,8 @@ public class UserController {
     private UserService userService;
     @Autowired
     private PositionService positionService;
+    @Autowired
+    private CompanyService companyService;
    @GetMapping("")
     public  String userList(Model model) {
         model.addAttribute("listUser",userService.getAllUser());
@@ -29,8 +32,9 @@ public class UserController {
     }
     @GetMapping("/add-user")
    public String addUser(Model model) {
-       model.addAttribute("user",new User());
+        model.addAttribute("user",new User());
         model.addAttribute("positions", positionService.getAllPosition());
+        model.addAttribute("companys", companyService.getAllCompany());
        return "add-user";
    }
    @PostMapping("/save-user")
@@ -45,7 +49,7 @@ public class UserController {
          return "update-user";
     }
     @PostMapping ("/update-user")
-    public String updateStudent(@ModelAttribute("student") User user, BindingResult result, Model model) {
+    public String updateStudent(@ModelAttribute("user") User user, BindingResult result, Model model) {
        userService.update(user);
         return "redirect:/user/";
     }

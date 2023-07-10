@@ -50,16 +50,18 @@
         <!--begin form list user-->
     <div class="container">
         <div class="row">
-            <div class="col-2 border">
-                <div>
-                    <a th:href="@{/user}">
-                        User Management
-                       </a>
-
+            <div class="col-2 border  bg-dark-subtle">
+                <div class="pt-3">
+                    <a th:href="@{/user}"  class="link-secondary" style="text-decoration: none"> User Management</a>
                 </div>
-                <div>
-                    <a th:href="@{/position}">
-                    Position Management
+                <div class="pt-3">
+                    <a th:href="@{/position}" class="link-secondary" style="text-decoration: none">
+                        Position Management
+                    </a>
+                </div>
+                <div class="pt-3">
+                    <a th:href="@{/company}" class="link-secondary" style="text-decoration: none">
+                        Company Management
                     </a>
                 </div>
             </div>

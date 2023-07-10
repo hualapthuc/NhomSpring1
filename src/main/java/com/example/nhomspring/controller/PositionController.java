@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 public class PositionController {
     @Autowired
     private PositionService positionService;
+
     @GetMapping("")
     public  String positionList(Model model) {
         model.addAttribute("listPosition",positionService.getAllPosition());
@@ -24,7 +25,7 @@ public class PositionController {
     public String getUserById(@PathVariable("id") Integer id, Model model) {
         Position position = positionService.getPositionById(id);
         model.addAttribute("position", position);
-        return "update-update";
+        return "all-list-position";
     }
     @GetMapping("/add-position")
     public String addPosition(Model model) {

@@ -19,11 +19,13 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Create Date</th>
+            <th>Company ID</th>
             <th>Position ID</th>
+
           </tr>
           </thead>
           <tbody>
-          <tr th:each="user:${user}"class="text-center">
+          <tr th:each="user:${user}" class="text-center">
             <td th:utext="${user.id}"></td>
             <td th:utext="${user.name}"></td>
             <td th:utext="${user.password}"></td>
@@ -32,6 +34,7 @@
             <td th:utext="${user.email}"></td>
             <td th:utext="${user.phone}"></td>
             <td th:utext="${user.createDate}"></td>
+            <td th:utext="${user.company.id}"></td>
             <td th:utext="${user.position.id}"></td>
           </tr>
           </tbody>

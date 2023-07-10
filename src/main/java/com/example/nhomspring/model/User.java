@@ -5,7 +5,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.time.LocalDate;
+
 import java.util.Date;
 
 @Entity
@@ -36,7 +36,7 @@ public class User {
 
     @Column(name = "created_date", nullable = false, length = 200)
     @JsonFormat(pattern="yyyy-MM-dd")
-    private Date createDate;
+    private Date createDate = new Date();
 
     @ManyToOne
     @JoinColumn(name = "company_id")

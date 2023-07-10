@@ -4,7 +4,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.sql.Date;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -47,10 +47,10 @@ public class Company {
     private String portInternal;
 
     @Column(name = "create_date", nullable = false, length = 200)
-    private Date createDate;
+    private Date createDate = new Date();
 
     @Column(name = "update_date", nullable = false, length = 200)
-    private Date updateDate;
+    private Date updateDate = new Date();
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "company")
     private List<User> listUser;
