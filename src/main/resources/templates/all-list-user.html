@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en" layout:decorate="~{main}">
+<body>
+<div layout:fragment="content">
+  <!--begin form list user-->
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <table class="table">
+          <thead class="table-dark">
+          <tr class="text-center">
+            <th>Id</th>
+            <th>UserName</th>
+            <th>Password</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Create Date</th>
+            <th>Position ID</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="user:${user}"class="text-center">
+            <td th:utext="${user.id}"></td>
+            <td th:utext="${user.name}"></td>
+            <td th:utext="${user.password}"></td>
+            <td th:utext="${user.firstName}"></td>
+            <td th:utext="${user.lastName}"></td>
+            <td th:utext="${user.email}"></td>
+            <td th:utext="${user.phone}"></td>
+            <td th:utext="${user.createDate}"></td>
+            <td th:utext="${user.position.id}"></td>
+          </tr>
+          </tbody>
+        </table>
+        <div>
+              <a th:href="@{/user}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">
+              Cancel
+              </a>
+              <a th:href="@{/user/delete/{id}(id=${user.id})}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">
+              Delete
+              </a>
+        </div>
+      </div>
+    </div>
+    <!--end form list user-->
+  </div>
+</div>
+</body>
+</html>

@@ -1,9 +1,11 @@
 package com.example.nhomspring.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -33,6 +35,7 @@ public class User {
     private String phone;
 
     @Column(name = "created_date", nullable = false, length = 200)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date createDate;
 
     @ManyToOne

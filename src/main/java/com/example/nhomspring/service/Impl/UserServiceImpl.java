@@ -1,6 +1,7 @@
 package com.example.nhomspring.service.Impl;
 
 import com.example.nhomspring.model.User;
+import com.example.nhomspring.repository.PostRepository;
 import com.example.nhomspring.repository.UserRepository;
 import com.example.nhomspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,11 +29,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public void update(User user) {
-        userRepository.save(user);
+         userRepository.save(user);
     }
 
     @Override
     public User getUserById(int id) {
-        return userRepository.getById(id);
+        return userRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("user not found"));
     }
 }

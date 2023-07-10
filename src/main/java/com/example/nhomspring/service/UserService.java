@@ -2,7 +2,6 @@ package com.example.nhomspring.service;
 
 import com.example.nhomspring.model.User;
 
-import javax.jws.soap.SOAPBinding;
 import java.util.List;
 
 public interface UserService {

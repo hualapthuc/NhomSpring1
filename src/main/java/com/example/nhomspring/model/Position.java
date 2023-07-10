@@ -1,5 +1,6 @@
 package com.example.nhomspring.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -19,13 +20,15 @@ public class Position {
     @Column(name = "position_name", nullable = false, length = 255)
     private String name;
 
-    @Column(name = "sort", nullable = false)
+    @Column(name = "sort", nullable = false, length = 255)
     private String sort;
 
-    @Column(name = "created_date", nullable = false)
+    @Column(name = "created_date", nullable = false, length = 200)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date createDate;
 
-    @Column(name = "updated_date", nullable = false)
+    @Column(name = "updated_date", nullable = false, length = 200)
+    @JsonFormat(pattern="yyyy-MM-dd")
     private Date updateDate;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "position")

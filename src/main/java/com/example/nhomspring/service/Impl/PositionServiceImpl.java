@@ -18,8 +18,8 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
-    public Position addPosition(Position position) {
-        return positionRepository.save(position);
+    public void addPosition(Position position) {
+         positionRepository.save(position);
     }
 
     @Override
@@ -28,7 +28,13 @@ public class PositionServiceImpl implements PositionService {
     }
 
     @Override
-    public void updatePosition(Position position) {
-          positionRepository.save(position);
+    public Position updatePosition(Position position) {
+         return positionRepository.save(position);
+    }
+
+    @Override
+    public Position getPositionById(Integer id) {
+        return positionRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("position not found"));
     }
 }
