@@ -24,7 +24,7 @@ public class PositionController {
     public String getUserById(@PathVariable("id") Integer id, Model model) {
         Position position = positionService.getPositionById(id);
         model.addAttribute("position", position);
-        return "update-update";
+        return "update-user";
     }
     @GetMapping("/add-position")
     public String addPosition(Model model) {

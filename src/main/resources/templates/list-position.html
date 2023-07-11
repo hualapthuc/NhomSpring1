@@ -7,22 +7,22 @@
     <div class="container">
         <!--begin form list postion-->
         <div class="row">
-            <div class="col-2 border">
-            <div>
-                <a th:href="@{/user}">
-                    User Management
-                </a>
-
-            </div>
-            <div>
-                <a th:href="@{/position}">
-                    Position Management
-                </a>
-            </div>
+            <div class="col-2 border text-center">
+                <div class="mt-2">
+                    <a th:href="@{/user}">
+                        User Management
+                    </a>
                 </div>
-            <div class="col-9">
-                <h6 class="mb-5">Position Management</h6>
-            <table class="table">
+                <div class="mt-2">
+                    <a th:href="@{/position}">
+                        Position Management
+                    </a>
+                </div>
+            </div>
+            <div class="col-10">
+                <h3 class="mb-4">Position Management</h3>
+                <a href="/position/add-position"><button type="button" class="btn btn-light mb-3">Add Position</button></a>
+            <table class="table table-bordered">
                 <thead class="table-dark">
                 <tr class="text-center">
                     <th>Id</th>

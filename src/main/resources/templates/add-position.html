@@ -16,17 +16,17 @@
             </div>
             <div class="form-group">
                 <label>Create date:</label>
-                <input type="text" th:field="*{createDate}" class="form-control">
+                <input type="date" th:field="*{createDate}" class="form-control">
             </div>
             <div class="form-group">
                 <label>Update Date:</label>
-                <input type="text" th:field="*{updateDate}" class="form-control">
+                <input type="date" th:field="*{updateDate}" class="form-control">
             </div>
             <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-light mt-3">
+                <input type="submit" value="Save" class="btn btn-primary mt-3">
+                <a th:href="@{/position}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
             </div>
         </form>
-        <a th:href="@{/position}">Cancel</a>
     </div>
 </div>
 </body>

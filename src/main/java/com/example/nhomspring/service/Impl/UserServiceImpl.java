@@ -1,12 +1,12 @@
 package com.example.nhomspring.service.Impl;
 
 import com.example.nhomspring.model.User;
-import com.example.nhomspring.repository.PostRepository;
 import com.example.nhomspring.repository.UserRepository;
 import com.example.nhomspring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Date;
 import java.util.List;
 @Service
 public class UserServiceImpl implements UserService {

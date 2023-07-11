@@ -38,7 +38,7 @@ public class Post {
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "group_id")
-    private  Group group;
+    private Group group;
 
     @Column(name = "created_date", nullable = false)
     private Date createDate;

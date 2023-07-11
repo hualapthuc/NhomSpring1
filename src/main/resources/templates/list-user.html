@@ -50,56 +50,55 @@
         <!--begin form list user-->
     <div class="container">
         <div class="row">
-            <div class="col-2 border">
-                <div>
+            <div class="col-2 border text-center">
+                <div class="mt-2">
                     <a th:href="@{/user}">
                         User Management
-                       </a>
-
+                    </a>
                 </div>
-                <div>
+                <div class="mt-2">
                     <a th:href="@{/position}">
-                    Position Management
+                        Position Management
                     </a>
                 </div>
             </div>
-            <div class="col-9">
-               <h6 class="mb-5">User Management</h6>
-                <a href="/user/add-user"><button type="button" class="btn btn-light mb-3">Add User</button></a>
-                <div class="input-group mb-3 w-50">
-                    <select class="form-select" id="inputGroupSelect02">
-                        <option selected>Choose...</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
-                    </select>
-                    <label class="input-group-text" for="inputGroupSelect02">Search</label>
+            <div class="col-10">
+               <h3 class="mb-4">User Management</h3>
+                <div class="form-group mb-2 w-50">
+                    <a href="/user/add-user"><button type="button" class="btn btn-light mb-3">Add User</button></a>
+<!--                    <select class="form-select">-->
+<!--                        <option selected>Choose...</option>-->
+<!--                        <option value="1">One</option>-->
+<!--                        <option value="2">Two</option>-->
+<!--                        <option value="3">Three</option>-->
+<!--                    </select>-->
+<!--                    <button class="btn btn-light">Search</button>-->
                 </div>
-            <table class="table">
-                <thead class="table-dark">
-                <tr class="text-center">
-                    <th>Id</th>
-                    <th>UserName</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Position</th>
-                    <th>Action</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr th:each="user:${listUser}"class="text-center">
-                    <td th:utext="${user.id}"></td>
-                    <td th:utext="${user.name}"></td>
-                    <td th:utext="${user.firstName}"></td>
-                    <td th:utext="${user.lastName}"></td>
-                    <td th:utext="${user.position.name}"></td>
-                    <td>
-                        <a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">View</a>
-                        <a th:href="@{/user/update/{id}(id=${user.id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">Update</a>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                    <tr class="text-center">
+                        <th>Id</th>
+                        <th>UserName</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Position</th>
+                        <th>Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="user:${listUser}"class="text-center">
+                        <td th:utext="${user.id}"></td>
+                        <td th:utext="${user.name}"></td>
+                        <td th:utext="${user.firstName}"></td>
+                        <td th:utext="${user.lastName}"></td>
+                        <td th:utext="${user.position.name}"></td>
+                        <td>
+                            <a th:href="@{/user/{id}(id=${user.id})}" class="btn btn-outline-success" tabindex="-1" role="button" aria-disabled="true">View</a>
+                            <a th:href="@{/user/update/{id}(id=${user.id})}" class="btn btn-outline-info" tabindex="-1" role="button" aria-disabled="true">Update</a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <!--end form list user-->
