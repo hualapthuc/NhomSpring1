@@ -6,8 +6,9 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 
 @Entity
-@NoArgsConstructor
 @Data
+@Table(name = "group1")
+@NoArgsConstructor
 public class Group {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,12 +20,11 @@ public class Group {
     @Column(name = "objectdata", nullable = false, length = 200)
     private String objectData;
 
-    @Column(name = "owner_id", nullable = false, length = 200)
-    private String ownerId;
-
     @Column(name = "group_alias_name", nullable = false, length = 200)
     private String groupAliasName;
 
     @Column(name = "public_flag", nullable = false, length = 200)
     private String publicFlag;
+    @OneToOne(mappedBy = "group")
+    private Post post;
 }

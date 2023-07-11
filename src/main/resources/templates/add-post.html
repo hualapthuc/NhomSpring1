@@ -43,11 +43,17 @@
         <input type="date" th:field="*{updateDate}" class="form-control">
       </div>
       <div class="form-group mt-3">
-        <label>Company:</label>
+        <label>Company ID:</label>
         <select th:field="*{company.id}">
-          <option class="h-75" th:each="company : ${companys}" th:value="${company.id}" th:text="${company.company_name}"></option>
+          <option class="h-75" th:each="company : ${company_all}" th:value="${company.id}" th:text="${company.company_name}"></option>
         </select>
       </div>
+<!--      <div class="form-group mt-3">-->
+<!--        <label>Group Id:</label>-->
+<!--        <select th:field="*{group.id}">-->
+<!--          <option class="h-75" th:each="group : ${groups}" th:value="${group.id}" th:text="${group.name}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
       <div class="form-group">
         <a th:href="@{/post}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">Cancel</a>
         <button type="submit" value="Save" class="btn btn-light mt-3">Save</button>

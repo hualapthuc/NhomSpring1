@@ -5,7 +5,7 @@
 <body>
 <div layout:fragment="content">
   <div class="container">
-    <!--begin form list post-->
+    <!--begin form list group-->
     <div class="row">
       <div class="col-2 border  bg-dark-subtle">
         <div class="pt-3">
@@ -33,35 +33,31 @@
         </div>
       </div>
       <div class="col-9">
-        <h6 class="mb-5">Post Management</h6>
-        <a href="/post/add-post"><button type="button" class="btn btn-light mb-3">Add Post</button></a>
+        <h6 class="mb-5">Group Management</h6>
+        <a href="/group/add-group"><button type="button" class="btn btn-light mb-3">Add Group</button></a>
         <table class="table">
           <thead class="table-dark">
           <tr class="text-center">
             <th>Id</th>
-            <th>Post Name</th>
-            <th>Address</th>
-            <th>Create Date</th>
-            <th>Update Date</th>
-            <th>Action</th>
+            <th>Group Name</th>
+            <th>Object Data</th>
+            <th>Group alias Name</th>
+            <th>Public flag</th>
           </tr>
           </thead>
           <tbody>
-          <tr th:each="post:${listPost}" class="text-center">
-            <td th:utext="${post.post_id}"></td>
-            <td th:utext="${post.post_name}"></td>
-            <td th:utext="${post.address}"></td>
-            <td th:utext="${post.createDate}"></td>
-            <td th:utext="${post.updateDate}"></td>
-            <td>
-              <a th:href="@{/post/{id}(id=${post.post_id})}" class="btn btn-light" tabindex="-1" role="button" aria-disabled="true">View</a>
-            </td>
+          <tr th:each="group:${listGroup}" class="text-center">
+            <td th:utext="${group.id}"></td>
+            <td th:utext="${group.name}"></td>
+            <td th:utext="${group.objectData}"></td>
+            <td th:utext="${group.groupAliasName}"></td>
+            <td th:utext="${group.groupAliasName}"></td>
           </tr>
           </tbody>
         </table>
       </div>
     </div>
-    <!--end form list post-->
+    <!--end form list group-->
   </div>
 </div>
 </body>

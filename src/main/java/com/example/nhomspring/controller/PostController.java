@@ -1,8 +1,8 @@
 package com.example.nhomspring.controller;
 
-import com.example.nhomspring.model.Position;
 import com.example.nhomspring.model.Post;
 import com.example.nhomspring.service.CompanyService;
+import com.example.nhomspring.service.GroupService;
 import com.example.nhomspring.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -17,6 +17,8 @@ public class PostController {
     private PostService postService;
     @Autowired
     private CompanyService companyService;
+    @Autowired
+    private GroupService groupService;
     @GetMapping("")
     public  String postList(Model model) {
         model.addAttribute("listPost",postService.getAllPost());
@@ -25,13 +27,14 @@ public class PostController {
     @GetMapping("/{id}")
     public String getPostById(@PathVariable("id") Integer id, Model model) {
         Post post = postService.getPostById(id);
-        model.addAttribute("post", post);
+        model.addAttribute("posts", post);
         return "all-list-post";
     }
     @GetMapping("/add-post")
     public String addPost(Model model) {
         model.addAttribute("post",new Post());
-        model.addAttribute("companys", companyService.getAllCompany());
+        model.addAttribute("company_all", companyService.getAllCompany());
+        model.addAttribute("groups", groupService.getAllGroup());
         return "add-post";
     }
     @PostMapping("/save-post")

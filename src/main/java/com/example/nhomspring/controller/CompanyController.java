@@ -24,7 +24,7 @@ public class CompanyController {
     @GetMapping("/{id}")
     public String getCompanyById(@PathVariable("id") Integer id, Model model) {
         Company company = companyService.getCompanyById(id);
-        model.addAttribute("company", company);
+        model.addAttribute("company_al", company);
         return "all-list-company";
     }
     @GetMapping("/add-company")

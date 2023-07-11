@@ -22,6 +22,11 @@
           </a>
         </div>
         <div class="pt-3">
+          <a th:href="@{/group}" class="link-secondary" style="text-decoration: none">
+            Group Management
+          </a>
+        </div>
+        <div class="pt-3">
           <a th:href="@{/post}" class="link-secondary" style="text-decoration: none">
             Post Management
           </a>
@@ -42,7 +47,7 @@
           </tr>
           </thead>
           <tbody>
-          <tr th:each="company:${listCompany}"class="text-center">
+          <tr th:each="company:${listCompany}" class="text-center">
             <td th:utext="${company.id}"></td>
             <td th:utext="${company.company_name}"></td>
             <td th:utext="${company.address}"></td>

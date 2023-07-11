@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      lang="en" layout:decorate="~{main}">
+<body>
+<div layout:fragment="content">
+  <div class="container">
+    <!--begin form list post-->
+    <div class="row">
+      <div class="col-12">
+        <h6 class="mb-5">Post Management</h6>
+        <table class="table">
+          <thead class="table-dark">
+          <tr class="text-center">
+            <th>Id</th>
+            <th>Post Name</th>
+            <th>Zip Code</th>
+            <th>Address</th>
+            <th>In_Telephone</th>
+            <th>Out_phone</th>
+            <th>Fax Number</th>
+            <th>Sort</th>
+            <th>Company ID</th>
+            <th>Create Date</th>
+            <th>Update Date</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr th:each="post:${posts}" class="text-center">
+            <td th:utext="${post.post_id}"></td>
+            <td th:utext="${post.post_name}"></td>
+            <td th:utext="${post.zipcode}"></td>
+            <td th:utext="${post.address}"></td>
+            <td th:utext="${post.in_telephone}"></td>
+            <td th:utext="${post.out_telephone}"></td>
+            <td th:utext="${post.fax_number}"></td>
+            <td th:utext="${post.sort}"></td>
+            <td th:utext="${post.company.id}"></td>
+            <td th:utext="${post.createDate}"></td>
+            <td th:utext="${post.updateDate}"></td>
+          </tr>
+          </tbody>
+        </table>
+        <div>
+          <a th:href="@{/post}" class="btn btn-light  mt-3" tabindex="-1" role="button" aria-disabled="true">
+            Cancel
+          </a>
+        </div>
+      </div>
+      <!--end form list post-->
+    </div>
+  </div>
+</body>
+</html>

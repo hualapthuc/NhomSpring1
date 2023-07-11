@@ -1,19 +1,17 @@
 package com.example.nhomspring.model;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Date;
 @Entity
 @Data
+@NoArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int post_id;
-
-    @ManyToOne
-    @JoinColumn(name ="company_id")
-    private Company company;
 
     @Column(name = "post_name", nullable = false, length = 255)
     private String post_name;
@@ -35,9 +33,12 @@ public class Post {
 
     @Column(name = "sort", nullable = false,length = 255)
     private String sort;
+    @ManyToOne
+    @JoinColumn(name ="company_id")
+    private Company company;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "group_id")
+    @JoinColumn(name = "group_id",referencedColumnName = "id")
     private  Group group;
 
     @Column(name = "created_date", nullable = false)

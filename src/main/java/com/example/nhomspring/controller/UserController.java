@@ -9,6 +9,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
 @Controller
 @RequestMapping("/user")
 public class UserController {
@@ -57,5 +60,10 @@ public class UserController {
     public String delete(@PathVariable int id) {
          userService.deleteUser(id);
         return "redirect:/user/";
+    }
+    @PostMapping("/search")
+    public String search(@RequestParam("search") String search, Model model) {
+        model.addAttribute("listUser", userService.getUserByUserName(search));
+        return "list-user";
     }
 }
